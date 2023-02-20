@@ -8,7 +8,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
-      - name: install twilio
+      - name: install twilio api
         run: pip install twilio
       - name: run code
         run: python main.py
