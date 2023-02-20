@@ -3,6 +3,9 @@ on:
   push:
     branches:
       - main
+      - testbranch1
+      - testbranch2
+      - testbranch3
 jobs:
   build:
     runs-on: ubuntu-latest
