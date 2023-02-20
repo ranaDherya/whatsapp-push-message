@@ -1,5 +1,3 @@
-require("dotenv").config();
-
 const accountSid = process.env.account_sid;
 const authToken = process.env.auth_token;
 const from = process.env.from_whatsapp_no;
