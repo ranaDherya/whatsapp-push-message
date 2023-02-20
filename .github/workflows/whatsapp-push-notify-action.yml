@@ -8,6 +8,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
+      - name: install dotenv
+        run: npm install dotenv
       - name: install twilio
         run: npm install twilio@4.7.2
       - name: run code
