@@ -1,23 +1,20 @@
 name: When a push occurs in the master branch, a private message is sent on the Whatsapp.
-on:
-  push:
-    branches:
-      - main
+on: [push]
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v1
-      - name: install twilio and dotenv
-        run: npm install twilio@4.7.2 dotenv
-      - name: run code
-        run: node main.js
+      - uses: actions/checkout@master
+      - name: whatsapp-notify
+        id: whatsapp-notify
         env:
-          account_sid: ${{ secrets.ACCOUNT_SID }}
-          auth_token: ${{ secrets.AUTH_TOKEN }}
-          to_whatsapp_no: ${{ secrets.TO_WHATSAPP_NO }}
-          from_whatsapp_no: ${{ secrets.FROM_WHATSAPP_NO }}
-          
+          account_sid: ${{ secrets.account_sid }}
+          auth_token: ${{ secrets.auth_token }}
+          to_whatsapp_no: ${{ secrets.to_whatsapp_no }}
+
+
+        
+      
       - name : Run
         run: |
           echo 'Start!'
