@@ -9,9 +9,9 @@ jobs:
     steps:
       - uses: actions/checkout@v1
       - name: install twilio api
-        run: pip install twilio
+        run: npm install twilio
       - name: run code
-        run: python main.py
+        run: node main.js
         env:
           account_sid: ${{ secrets.ACCOUNT_SID }}
           auth_token: ${{ secrets.AUTH_TOKEN }}
